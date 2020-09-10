@@ -50,27 +50,27 @@
       <%- include('partials/cta') -%>
 
       <%- include('partials/app-feature-block', {
-        image: '/static/images/hospital.svg',
-        title: __('Unreported cases'),
-        description: __('The spread of COVID-19 in our country is unknown. Help us create a better overview.')
+        image: '/static/images/three.svg',
+        title: __('Three Isolation Factors'),
+        description: __('Answer 10 simple questions about 3 Key factors that drive social isolation in our communities:  environment, ability and motivation')
       }) -%>
 
       <%- include('partials/app-feature-block', {
-        image: '/static/images/doctor.svg',
+        image: '/static/images/mask2.svg',
         title: __('Contribute anonymously'),
-        description: __('Report your health condition anonymously')
+        description: __('Respond anonymously and fully control the support your receive from local providers.')
       }) -%>
 
       <%- include('partials/app-feature-block', {
-        image: '/static/images/research.svg',
+        image: '/static/images/exchange.svg',
         title: __('Insight for everyone'),
-        description: __('The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.')
+        description: __('The data is open to anyone interested in fighting social isolation and presented in powerful ways from our secure meta data clearinghouse.')
       }) -%>
 
       <%- include('partials/app-feature-block', {
         image: '/static/images/mobile.svg',
         title: __('Everything is open'),
-        description: __('The website is open source and built by volunteers. Feel free to join.')
+        description: __('Connie is a powerful open source web application and built by volunteers. Feel free to join us.')
       }) -%>
     </div>
   </div>
@@ -87,20 +87,20 @@
       }) -%>
 
       <%- include('partials/app-stats-block', {
-        image: '/static/images/temperature-check.svg',
-        title: __('Infected / Have been tested'),
+        image: '/static/images/napkin.svg',
+        title: __('Participants who want to engage'),
         number: `${formatNumber(aggregated.numberOfConfirmedInfected)}/${formatNumber(aggregated.numberOfTested)}`
       }) -%>
 
       <%- include('partials/app-stats-block', {
         image: '/static/images/transfer.svg',
-        title: __(`In close contact with someone who's infected`),
+        title: __(`Participants able to help / volunteer`),
         number: formatNumber(aggregated.numberOfContacts)
       }) -%>
 
       <%- include('partials/app-stats-block', {
         image: '/static/images/symptoms.svg',
-        title: __('Has symptoms'),
+        title: __('Do Not Contact Me'),
         number: formatNumber(aggregated.numberOfPeopleShowingSymptoms)
       }) -%>
     </ul>
@@ -116,7 +116,7 @@
 <section class="custom-section-content mx-auto p-4 pb-8 w-full">
   <form id="contribute" method="post" action="/" class="custom-form p-6 py-6 lg:p-24 lg:py-12 my-4 rounded-lg flex flex-col items-start">
     <h3 class="text-2xl md:text-3xl lg:text-5xl text-center font-bold text-cvs-red m-2 self-center">
-      <%= profile ? __("Your state of health") : __("Report your health condition") %>
+      <%= profile ? __("Your Social Isolation Report") : __("Social Isolation Factors Survey") %>
     </h3>
     <% if (locals.redirectToGovernment) {%>
       <!-- If you change the color make sure it's in postcss.config.js -->
@@ -168,12 +168,12 @@
     <% } else { %>
       <p class="text-center text-base lg:text-xl font-medium m-4 mt-0 self-center">
         <%= __("Are you from") %> <%= __(`{{ COUNTRY_NAME }}`, { COUNTRY_NAME }) %>?
-        <%- __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
+        <%- __("Help us crowdsource solutions to social isolation! Please respond to the follow simple questions that address the top three factors that research has found to drive social isolation in U.S. communities. Once complete, please submit the form below. Thank you.") %></p>
     <% } %>
 
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/map.svg" alt="" class="h-16 w-16">
-      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Geography and demography") %></h3>
+      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Basic Demographics") %></h3>
     </div>
 
 
@@ -199,7 +199,7 @@
     </p>
     <p class="mb-2">
       <input required type="radio" id="gender-other" name="gender" value="other" <%= sex === 'OTHER' ? 'checked' : '' %>>
-      <label for="gender-other"><%= __("Other") %></label>
+      <label for="gender-other"><%= __("Transgender") %></label>
     </p>
     </fieldset>
 
@@ -211,12 +211,12 @@
     <input class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="<%= locals.zipPattern %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
 
     <div class="flex flex-row items-center mt-8">
-      <img src="/static/images/mask.svg" alt="" class="h-16 w-16">
-      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Testing and symptoms") %></h3>
+      <img src="/static/images/senior-white-male.svg" alt="" class="h-16 w-16">
+      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Some Questions About Your Environment, Ability and Motivation") %></h3>
     </div>
 
     <fieldset>
-    <legend><%= __("Have you been in close contact with someone who was tested positive for COVID-19?") %></legend>
+    <legend><%= __("If you wanted to, could you or do  you participate in social activities or organized groups at least once a month, either virtually or in-person?") %></legend>
 
     <p>
       <input required type="radio" id="been-in-contact-with-yes" name="been-in-contact-with" value="yes" <%= hasBeenInContactWithInfected ? 'checked' : '' %>>
@@ -229,7 +229,7 @@
 
 
     <fieldset>
-    <legend><%= __('Have you been tested for COVID-19?')%></legend>
+    <legend><%= __('Do you see or talk to a family member or a friend at least once a month?')%></legend>
     <p>
         <input required type="radio" id="been-tested-yes" name="been-tested" value="yes" onclick="changeTestResultDisplay(true)" <%= hasBeenTested ? 'checked' : '' %>>
         <label class="mr-4" for="been-tested-yes"><%= __('Yes')%></label>
@@ -257,90 +257,90 @@
     </div>
 
     <fieldset>
-    <legend class="mb-0"><%= __('Symptoms you have experienced') %></legend>
-    <p class="mb-4"><%- __('Select only the symptoms you have experienced') %></p>
+    <legend class="mb-0"><%= __('Are you interested in learning how to garden, cook or take new courses?') %></legend>
+    <p class="mb-4"><%- __('Select areas of interest that seem interesting?') %></p>
 
     <label class="checkbox" for="symptom-cough">
       <input type="checkbox" id="symptom-cough" name="symptom-cough" <%= symptomDryCough ? 'checked' : '' %>>
-      <span><%= __('Dry cough') %></span>
+      <span><%= __('Gardening') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-slime-cough">
       <input type="checkbox" id="symptom-slime-cough" name="symptom-slime-cough" <%= symptomSlimeCough ? 'checked' : '' %>>
-      <span><%= __('Mucus cough') %></span>
+      <span><%= __('Virtual Cooking Classes') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-fatigue">
       <input type="checkbox" id="symptom-fatigue" name="symptom-fatigue" <%= symptomFatigue ? 'checked' : '' %>>
-      <span><%= __('Fatigue and exhaustion') %></span>
+      <span><%= __('Learning Online Dating') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-fever">
       <input type="checkbox" id="symptom-fever" name="symptom-fever" <%= symptomFever ? 'checked' : '' %>>
-      <span><%= __('Fever') %></span>
+      <span><%= __('Virtual Community Meetups') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-heavy-breath">
       <input type="checkbox" id="symptom-heavy-breath" name="symptom-heavy-breath" <%= symptomHeavyBreathing ? 'checked' : '' %>>
-      <span><%= __('Shortness of breath') %></span>
+      <span><%= __('Mentor Start-up Business Owners') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-muscle-pain">
       <input type="checkbox" id="symptom-muscle-pain" name="symptom-muscle-pain" <%= symptomMuscleAching ? 'checked' : '' %>>
-      <span><%= __('Muscle pain') %></span>
+      <span><%= __('Online / Virtual Choir') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-diarrhea">
       <input type="checkbox" id="symptom-diarrhea" name="symptom-diarrhea" <%= symptomDiarrhea ? 'checked' : '' %>>
-      <span><%= __('Diarrhea') %></span>
+      <span><%= __('Church Groups') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-headache">
       <input type="checkbox" id="symptom-headache" name="symptom-headache" <%= symptomHeadache ? 'checked' : '' %>>
-      <span><%= __('Headache') %></span>
+      <span><%= __('Fitness') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-sore-throat">
       <input type="checkbox" id="symptom-sore-throat" name="symptom-sore-throat" <%= symptomSoreThroat ? 'checked' : '' %>>
-      <span><%= __('Sore throat') %></span>
+      <span><%= __('Diet & Exercise') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-no-smell">
       <input type="checkbox" id="symptom-no-smell" name="symptom-no-smell" <%= symptomNoSmell ? 'checked' : '' %>>
-      <span><%= __('Loss of sense of smell') %></span>
+      <span><%= __('Online Art Classes') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-no-taste">
       <input type="checkbox" id="symptom-no-taste" name="symptom-no-taste" <%= symptomNoTaste ? 'checked' : '' %>>
-      <span><%= __('Loss of sense of taste') %></span>
+      <span><%= __('Build A Website') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-runny-nose">
       <input type="checkbox" id="symptom-runny-nose" name="symptom-runny-nose" <%= symptomRunnyNose ? 'checked' : '' %>>
-      <span><%= __('Stuffy or runny nose') %></span>
+      <span><%= __('Home Repair For Dummies') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-nausea-or-vomiting">
       <input type="checkbox" id="symptom-nausea-or-vomiting" name="symptom-nausea-or-vomiting" <%= symptomNauseaOrVomiting ? 'checked' : '' %>>
-      <span><%= __('Nausea or vomiting') %></span>
+      <span><%= __('Online Sex Chat') %></span>
       <span class="checkmark"></span>
     </label>
     </fieldset>
 
     <div id="symptom-start-question" style="display: none;">
-      <label for="symptom-start"><%= __('When did the symptoms start?')%></label>
+      <label for="symptom-start"><%= __('When could you start?')%></label>
       <input
         class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         type="date"
@@ -365,47 +365,47 @@
     <legend><%= __('I am currently:')%></legend>
     <p class="mb-2">
       <input required type="radio" id="not-in-isolation" name="isolation-status" value="not-in-isolation" <%= isolationStatus === 'NOT_IN_ISOLATION' ? 'checked' : '' %>>
-      <label for="not-in-isolation"><%= __("Not in isolation") %></label>
+      <label for="not-in-isolation"><%= __("Living alone") %></label>
     </p>
     <p class="mb-2">
       <input required type="radio" id="isolation-due-to-travel" name="isolation-status" value="isolation-due-to-travel" <%= isolationStatus === 'ISOLATION_DUE_TO_TRAVEL' ? 'checked' : '' %>>
-      <label for="isolation-due-to-travel"><%= __("In isolation due to a recent international travel") %></label>
+      <label for="isolation-due-to-travel"><%= __("Living with a spouse or significant other") %></label>
     </p>
     <p class="mb-2">
       <input required type="radio" id="isolation-due-to-contact" name="isolation-status" value="isolation-due-to-contact" <%= isolationStatus === 'ISOLATION_DUE_TO_CONTACT' ? 'checked' : '' %>>
-      <label for="isolation-due-to-contact"><%= __("In isolation due to contact with an individual who has been exposed to the coronavirus.") %></label>
+      <label for="isolation-due-to-contact"><%= __("Living with my adult children") %></label>
     </p>
     <p class="mb-2">
       <input required type="radio" id="isolation-due-to-government" name="isolation-status" value="isolation-due-to-government" <%= isolationStatus === 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS' ? 'checked' : '' %>>
-      <label for="isolation-due-to-government"><%= __("In isolation due to orders from the government") %></label>
+      <label for="isolation-due-to-government"><%= __("Living with roommates") %></label>
     </p>
     <p class="mb-2">
       <input required type="radio" id="isolation-due-to-covid-19" name="isolation-status" value="isolation-due-to-covid-19" <%= isolationStatus === 'ISOLATION_DUE_TO_COVID_19' ? 'checked' : '' %>>
-      <label for="isolation-due-to-covid-19"><%= __("In isolation due to COVID-19 infection") %></label>
+      <label for="isolation-due-to-covid-19"><%= __("In assisted living") %></label>
     </p>
     <p>
       <input required type="radio" id="voluntary-isolation" name="isolation-status" value="voluntary-isolation" <%= isolationStatus === 'VOLUNTARY_ISOLATION' ? 'checked' : '' %>>
-      <label for="voluntary-isolation"><%= __("In voluntary isolation to avoid potentially spreading or catching COVID-19") %></label>
+      <label for="voluntary-isolation"><%= __("Other") %></label>
     </p>
     </fieldset>
 
     <fieldset>
-    <legend><%= __('Cigarette smoking habits:') %></legend>
+    <legend><%= __('Do you want to make new friends, but aren’t sure how? ') %></legend>
     <p class="mb-2">
       <input required type="radio" id="currently-smoking" name="smoking-habits" value="currently-smoking" <%= smokingHabit === 'CURRENTLY' ? 'checked' : '' %>>
-      <label for="currently-smoking"><%= __("I currently smoke") %></label>
+      <label for="currently-smoking"><%= __("No, I'm just sharing data") %></label>
     </p>
     <p class="mb-2">
       <input required type="radio" id="used-to-smoke" name="smoking-habits" value="used-to-smoke" <%= smokingHabit === 'USED_TO' ? 'checked' : '' %>>
-      <label for="used-to-smoke"><%= __("I used to smoke") %></label>
+      <label for="used-to-smoke"><%= __("I'm not sure right now") %></label>
     </p>
     <p>
       <input required type="radio" id="never-smoked" name="smoking-habits" value="never-smoked" <%= smokingHabit === 'NEVER' ? 'checked' : '' %>>
-      <label for="never-smoked"><%= __("I have never smoked") %></label>
+      <label for="never-smoked"><%= __("Yes") %></label>
     </p>
     </fieldset>
 
-    <label class="mb-0" for="body-temperature"><%= __('What is your current body temperature? (Celcius)') %></label>
+    <label class="mb-0" for="body-temperature"><%= __('What is your mobile phone number? (Celcius)') %></label>
     <p class="mb-4"><%= __('This field is optional') %></p>
     <input
       type="number"
@@ -422,7 +422,7 @@
 
     <h3 class="text-cvs-red text-xl font-bold m-4 ml-0 mt-8 mb-0"><%= __("How will my data be used?") %></h3>
 
-    <p class="mt-0 mb-4"><%= __('Your health information is stored anonymously, and can not be used to identify you.')%><br />
+    <p class="mt-0 mb-4"><%= __('Your responses to the social isolation survey are stored anonymously, and can not be used to identify you.')%><br />
       <a target="_blank" class="text-cvs-red hover:underline"href="<%- urls.privacyPolicy %>"><%= __('Our privacy policy can be found here')%></a>.
     </p>
 
@@ -437,7 +437,7 @@
     <p>
       <label class="checkbox" for="accept-remember">
         <input type="checkbox" id="accept-remember" name="accept-remember">
-        <span><%= __(`I agree to set a cookie so I can change my health condition later e.g. to report recovery/getting sick`)%> (<%= __('recommended')%>)</span>
+        <span><%= __(`I agree to set a cookie so I can be updated when xxxx happens e.g. to get notices from xxx about xxx`)%> (<%= __('recommended')%>)</span>
         <span class="checkmark"></span>
       </label>
     </p>

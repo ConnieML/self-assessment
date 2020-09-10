@@ -36,7 +36,7 @@ locals.totalTested; const { formatNumber, aggregated } = locals; %>
 </section>
 
 <h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
-  <%= __(`COVID-19 infected`) %>
+  <%= __(`Self-Reported Social Isolation Data`) %>
 </h2>
 <p>
   <%= __(`In total`) %> <%= formatNumber(totalInfectedPeopleWithSymptoms) %> <%=
@@ -46,7 +46,7 @@ locals.totalTested; const { formatNumber, aggregated } = locals; %>
 
 <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8 mt-8">
   <div>
-    <h3><%= __(`Symptoms`) %></h3>
+    <h3><%= __(`Isolation Factors`) %></h3>
     <canvas id="infectedSymptomsChart"></canvas>
   </div>
   <div>

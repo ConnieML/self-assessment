@@ -1,4 +1,4 @@
-# Coronastatus
+# ConnieML Self-Assessment Web App
 
 ![](https://github.com/BustByte/coronastatus/workflows/test/badge.svg)
 

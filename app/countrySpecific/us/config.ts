@@ -1,7 +1,7 @@
 import { Config } from '../../domain/types';
 
 export const countrySpecificConfig: Config = {
-  BASE_URL: 'coronastatus.us',
+  BASE_URL: 'connie.ml',
   COUNTRY_CODE: 'us',
   DB_PATH: './covid_db',
   LOCALE: 'en-US',
