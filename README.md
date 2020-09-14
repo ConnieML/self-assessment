@@ -6,62 +6,23 @@
 
 ## What is this?
 
-We don't know how many people have COVID-19. So we made a website where people can self-report symptoms. We plot the submissions on a map and show graphs with trends.
+
 
 ## How can I help?
 
-We need people who can help translate the site, develop new features, project leads for new and existing countries, and much more. Join our group chat: https://t.me/onzecorona
+
 
 ### In what countries have you launched Coronastatus?
 
-- 🇳🇴 Norway: https://coronastatus.no
-- 🇳🇱 The Netherlands: https://coronastatus.nl
-- 🇸🇰 Slovakia: https://coronastatus.sk
-- 🇩🇰 Denmark: https://coronastatus.dk
-- 🇨🇴 Colombia: https://coronastatus.co
-- 🇮🇹 Italy: https://coronastatus.it
-- 🇫🇷 France: https://coronastatus.fr
-- 🇲🇽 Mexico: https://coronastatus.mx
-- 🇺🇸 United States of America (USA): https://coronastatus.us
-- 🇺🇦 Ukraine: https://coronastatus.org.ua
-- 🇪🇸 Spain: https://coronastatus.es
-- 🇧🇷 Brazil: https://coronastatus.net.br
-- 🇨🇦 Canada: https://coronastatus.ca
-- 🇦🇺 Australia: https://coronastatusau.org
-- 🇸🇬 Singapore: https://coronastatus.sg
-- 🇦🇷 Argentina: https://coronastatus.com.ar
-- 🇲🇾 Malaysia: https://coronastatusmy.org
-- 🇲🇹 Malta: https://coronastatusmt.com
-- 🇨🇱 Chile: https://coronastatus.cl
-- 🇮🇳 India: https://corona-status.in
-- 🇵🇹 Portugal: https://coronastatus.pt
-- 🇹🇷 Turkey: https://coronastatustr.com
-- 🇱🇹 Lithuania: https://coronastatus.lt
-- 🇳🇵 Nepal: https://coronastatusnp.com
-- 🇨🇿 Czech Republic: https://corona-status.cz
-- 🇮🇩 Indonesia: https://coronastatus.id
-- 🇵🇭 Philippines: https://coronastatus.ph
-- 🇳🇬 Nigeria: https://coronastatus.ng
-- 🇷🇴 Romania: https://coronastatus.ro
-- 🇸🇪 Sweden: coming soon
-- 🇧🇪 Belgium: coming soon
-- 🇮🇸 Iceland: coming soon
-- 🇨🇭 Switzerland: coming soon
-- 🇩🇪 Germany: coming soon
-- 🇧🇩 Bangladesh: coming soon
-- ... want one for your country? Join our community: https://t.me/onzecorona
+
 
 ## Why?
 
-The government is working on this, but they're too slow in getting something out fast.
+
 
 ## Mentions in the media
 
-| Title                                                                       | Country | URL                                                                                                                                                        |
-| --------------------------------------------------------------------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Self-report system for monitoring COVID19 needs to be in place immediately! |   🇳🇴    | [Read here](https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg) |
-| Are you ill? Health services will soon let you self-report symtoms.         |   🇳🇴    | [Read here](https://www.bt.no/innenriks/i/QoAdAx/har-du-vaert-syk-snart-kan-du-hjelpe-helsemyndighetene-med-aa-registrer)                                  |
-| Developers take on COVID-19 with open-source projects, hackathons           |   🇺🇸    | [Read here](https://sdtimes.com/open-source/developers-take-on-covid-19-with-open-source-projects-hackathons/)                                             |
+
 
 ## Who's behind this?
 
@@ -69,7 +30,6 @@ A bunch of developers from around the world that wanted to help out. This is not
 
 ## How can I contribute?
 
-Join our Telegram group chat here: https://t.me/onzecorona or reach out on kontakt@bustbyte.no
 
 Click on "Issues" in the menu above to see what we need help with.
 
