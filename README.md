@@ -4,6 +4,8 @@
 
 > Report your health status to get a better overview of COVID-19 in your country
 
+This repository has been archived due to no longer having relevant use in the current state of Connie. 
+
 ## What is this?
 
 
